@@ -1,5 +1,5 @@
 {
-  "name": "@coradion/ui",
+  "name": "npm-backage",
   "version": "0.0.0",
   "description": "A component library for Coradion sites and apps",
   "main": "dist/index.js",
@@ -14,10 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coradion/ui"
+    "url": "https://github.com/amrabunemr98/ui-library"
   },
   "bugs": {
-    "url": "https://github.com/coradion/ui/issues"
+    "url": "https://github.com/amrabunemr98/ui-library/issues"
   },
   "directories": {
     "dist": "dist"
@@ -30,7 +30,7 @@
     "build-components": "tsc --build",
     "build": "npm run build-components && npm run build-tailwind"
   },
-  "author": "Coradion",
+  "author": "amr",
   "license": "AGPL-3.0-or-later",
   "keywords": [],
   "devDependencies": {

@@ -1,0 +1,39 @@
+name: CI/CD Pipeline on RHEL 9
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: self-hosted  # Change from ubuntu-latest to self-hosted runner
+    # Optionally, you can specify a custom label to target this specific runner, e.g.,:
+    # runs-on: [ self-hosted, RHEL9 ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Specify the version of Node.js to use
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build the project
+        run: npm run build
+
+      # Optional: Publish the library to npm
+      - name: Publish to npm
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npm publish --access public
+        env:
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
