@@ -8,9 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Change from ubuntu-latest to self-hosted runner
-    # Optionally, you can specify a custom label to target this specific runner, e.g.,:
-    # runs-on: [ self-hosted, RHEL9 ]
+    runs-on: self-hosted  # Ensure this matches your runner's label
 
     steps:
       - name: Checkout code
@@ -19,11 +17,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.6.0  
+          node-version: '18.6.0'  # Use the desired Node.js version
+
+      - name: Remove package-lock.json (if it exists)
+        run: |
+          if [ -f package-lock.json ]; then
+            rm package-lock.json
+          fi
 
       - name: Install dependencies
-        run: npm install
-
+        run: npm install  # This will regenerate package-lock.json
 
       - name: Build the project
         run: npm run build
@@ -33,5 +36,5 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npm publish --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}  # Ensure you have set this secret
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}    # Ensure you have set this secret
