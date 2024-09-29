@@ -32,8 +32,8 @@ jobs:
         run: npm run build
 
       - name: Set package version
-        run: |
-            npm version ${{ github.run_number }}  # Use the run number as the version
+        run: npm version 1.0.${{ github.run_number }}
+
 
       # Optional: Publish the library to npm
       - name: Publish to npm
