@@ -5,6 +5,7 @@
 ## :star2: Overview:-
 - This document outlines the automation strategy for developing and deploying an internal React UI library using GitHub Actions for CI/CD and a private npm registry for secure distribution. The library is built using TypeScript and is designed to provide reusable UI components for internal projects, ensuring consistency and ease of integration across various applications.
 To address challenges such as synchronizing updates and avoiding issues like broken components or missing dependencies, this guide provides a comprehensive, step-by-step approach for automating the CI/CD pipeline, version control, and library publishing. The CI/CD pipeline is configured to run on a RedHat environment using Node.js version 18.6.0, leveraging GitHub Actions with a self-hosted runner for optimal performance and control.
+![Capture](https://github.com/user-attachments/assets/1250fcca-96ff-4bfc-9bd2-f7b5a41f38eb)
 
 ## 🎯 Objective:-
 - The objective of this document is to define a robust CI/CD pipeline for the development and deployment of an internal React UI library using GitHub Actions. This strategy automates build and deployment processes while securely publishing the library to a private npm registry. By doing so, it ensures efficient version control, consistency across projects, and reduces manual intervention, ultimately streamlining the development lifecycle and minimizing integration issues.
