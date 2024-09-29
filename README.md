@@ -209,8 +209,10 @@ jobs:
    - **Username**: Your npm username.
    - **Password**: Your npm password.
    - **Email**: The email associated with your npm account.
+  
    > [!IMPORTANT]
    > Make sure to enter the correct credentials.
+  
    ![Screenshot from 2024-09-29 03-30-38](https://github.com/user-attachments/assets/4666f391-0d56-44d7-b21e-533ee752a442)
    ![Screenshot from 2024-09-29 03-32-45](https://github.com/user-attachments/assets/3a73e877-29ca-4810-9816-b09ad398a207)
 
