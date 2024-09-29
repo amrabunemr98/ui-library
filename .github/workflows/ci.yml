@@ -1,4 +1,4 @@
-name: CI/CD Pipeline on RHEL 9
+name: CI/CD Pipeline on RHEL
 
 on:
   push:
@@ -40,5 +40,5 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npm publish --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}  # Ensure you have set this secret
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}    # Ensure you have set this secret
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}  
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}    
